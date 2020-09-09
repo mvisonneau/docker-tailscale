@@ -1,0 +1,20 @@
+#/usr/bin/env sh
+
+$TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME:-$(hostname)}
+
+up() {
+  sleep 5
+
+  tailscale up \
+    --authkey=${TAILSCALE_AUTH_KEY} \
+    --hostname=${TAILSCALE_HOSTNAME} \
+    --advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
+    --advertise-tags=${TAILSCALE_ADVERSITE_TAGS}
+}
+
+if [ ! -d /dev/net ]; then mkdir /dev/net; fi
+if [ ! -e /dev/net/tun ]; then mknod /dev/net/tun c 10 200; fi
+
+up &
+tailscaled \
+  --state=/tailscale/tailscaled.state
