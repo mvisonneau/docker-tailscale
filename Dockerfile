@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-ARG VERSION=1.0.5
+ARG VERSION=1.2.8
 ARG ARCH=amd64
 
 RUN \
