@@ -1,4 +1,4 @@
-#/usr/bin/env sh
+#!/usr/bin/env bash
 
 $TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME:-$(hostname)}
 
@@ -15,6 +15,4 @@ up() {
 if [ ! -d /dev/net ]; then mkdir /dev/net; fi
 if [ ! -e /dev/net/tun ]; then mknod /dev/net/tun c 10 200; fi
 
-up &
-tailscaled \
-  --state=/tailscale/tailscaled.state
+up & tailscaled
