@@ -1,7 +1,7 @@
 FROM alpine:3.13
 
-ARG VERSION=1.2.10
 ARG ARCH=amd64
+ARG VERSION=1.4.2
 
 RUN \
   apk add --no-cache iptables iproute2 ca-certificates bash \
