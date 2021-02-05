@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-$TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME:-$(hostname)}
+TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME:-$(hostname)}
 
 up() {
   sleep 5
