@@ -1,15 +1,25 @@
 #!/usr/bin/env bash
 
-TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME:-$(hostname)}
+set -e
+
+test -v ${TAILSCALE_AUTH_KEY}
 
 up() {
   sleep 5
 
   tailscale up \
-    --authkey=${TAILSCALE_AUTH_KEY} \
-    --hostname=${TAILSCALE_HOSTNAME} \
-    --advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
-    --advertise-tags=${TAILSCALE_ADVERSITE_TAGS}
+    -accept-dns=${TAILSCALE_ACCEPT_DNS:-true} \
+    -accept-routes=${TAILSCALE_ACCEPT_DNS:-false} \
+    -advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
+    -advertise-tags=${TAILSCALE_ADVERTISE_TAGS} \
+    -authkey=${TAILSCALE_AUTH_KEY} \
+    -force-reauth=${TAILSCALE_FORCE_REAUTH:-false} \
+    -host-routes=${TAILSCALE_HOST_ROUTES:-true} \
+    -hostname=${TAILSCALE_HOSTNAME:-$(hostname)} \
+    -login-server=${TAILSCALE_LOGIN_SERVER:-"https://login.tailscale.com"} \
+    -netfilter-mode=${TAILSCALE_NETFILTER_MODE:-on} \
+    -shields-up=${TAILSCALE_SHIELDS_UP:-false} \
+    -snat-subnet-routes-mode=${TAILSCALE_SNAT_SUBNET_ROUTES:-true}
 }
 
 if [ ! -d /dev/net ]; then mkdir /dev/net; fi
