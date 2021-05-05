@@ -2,8 +2,6 @@
 
 set -e
 
-test -v ${TAILSCALE_AUTH_KEY}
-
 up() {
   sleep 5
 
@@ -19,7 +17,7 @@ up() {
     -login-server=${TAILSCALE_LOGIN_SERVER:-"https://login.tailscale.com"} \
     -netfilter-mode=${TAILSCALE_NETFILTER_MODE:-on} \
     -shields-up=${TAILSCALE_SHIELDS_UP:-false} \
-    -snat-subnet-routes-mode=${TAILSCALE_SNAT_SUBNET_ROUTES:-true}
+    -snat-subnet-routes=${TAILSCALE_SNAT_SUBNET_ROUTES:-true}
 }
 
 if [ ! -d /dev/net ]; then mkdir /dev/net; fi
