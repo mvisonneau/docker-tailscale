@@ -9,7 +9,7 @@ up() {
 
   tailscale up \
     -accept-dns=${TAILSCALE_ACCEPT_DNS:-true} \
-    -accept-routes=${TAILSCALE_ACCEPT_DNS:-false} \
+    -accept-routes=${TAILSCALE_ACCEPT_ROUTES:-false} \
     -advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
     -advertise-tags=${TAILSCALE_ADVERTISE_TAGS} \
     -authkey=${TAILSCALE_AUTH_KEY} \
