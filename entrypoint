@@ -6,18 +6,21 @@ up() {
   sleep 5
 
   tailscale up \
-    -accept-dns=${TAILSCALE_ACCEPT_DNS:-true} \
-    -accept-routes=${TAILSCALE_ACCEPT_ROUTES:-false} \
-    -advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
-    -advertise-tags=${TAILSCALE_ADVERTISE_TAGS} \
-    -authkey=${TAILSCALE_AUTH_KEY} \
-    -force-reauth=${TAILSCALE_FORCE_REAUTH:-false} \
-    -host-routes=${TAILSCALE_HOST_ROUTES:-true} \
-    -hostname=${TAILSCALE_HOSTNAME:-$(hostname)} \
-    -login-server=${TAILSCALE_LOGIN_SERVER:-"https://login.tailscale.com"} \
-    -netfilter-mode=${TAILSCALE_NETFILTER_MODE:-on} \
-    -shields-up=${TAILSCALE_SHIELDS_UP:-false} \
-    -snat-subnet-routes=${TAILSCALE_SNAT_SUBNET_ROUTES:-true}
+    --accept-dns=${TAILSCALE_ACCEPT_DNS:-true} \
+    --accept-routes=${TAILSCALE_ACCEPT_ROUTES:-false} \
+    --advertise-exit-node=${TAILSCALE_ADVERTISE_EXIT_NODES:-false} \
+    --advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
+    --advertise-tags=${TAILSCALE_ADVERTISE_TAGS} \
+    --authkey=${TAILSCALE_AUTH_KEY} \
+    --exit-node=${TAILSCALE_EXIT_NODE:-false} \
+    --exit-node-allow-lan-access=${TAILSCALE_EXIT_NODE_ALLOW_LAN_ACCESS:-false} \
+    --force-reauth=${TAILSCALE_FORCE_REAUTH:-false} \
+    --host-routes=${TAILSCALE_HOST_ROUTES:-true} \
+    --hostname=${TAILSCALE_HOSTNAME:-$(hostname)} \
+    --login-server=${TAILSCALE_LOGIN_SERVER:-"https://login.tailscale.com"} \
+    --netfilter-mode=${TAILSCALE_NETFILTER_MODE:-on} \
+    --shields-up=${TAILSCALE_SHIELDS_UP:-false} \
+    --snat-subnet-routes=${TAILSCALE_SNAT_SUBNET_ROUTES:-true}
 }
 
 if [ ! -d /dev/net ]; then mkdir /dev/net; fi
