@@ -12,7 +12,7 @@ up() {
     --advertise-routes=${TAILSCALE_ADVERTISE_ROUTES} \
     --advertise-tags=${TAILSCALE_ADVERTISE_TAGS} \
     --authkey=${TAILSCALE_AUTH_KEY} \
-    --exit-node=${TAILSCALE_EXIT_NODE:-false} \
+    --exit-node=${TAILSCALE_EXIT_NODE} \
     --exit-node-allow-lan-access=${TAILSCALE_EXIT_NODE_ALLOW_LAN_ACCESS:-false} \
     --force-reauth=${TAILSCALE_FORCE_REAUTH:-false} \
     --host-routes=${TAILSCALE_HOST_ROUTES:-true} \
