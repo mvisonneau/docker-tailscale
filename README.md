@@ -10,7 +10,7 @@ Run a tailscale agent on top of K8S
 ~$ helm install \
   tailscale-relay \
   mvisonneau/tailscale-relay \
-  --set config.authKey=<yourauthkey>
+  --set config.authKey=<your_auth_key>
 ```
 
 More information on [how to use the chart here](https://github.com/mvisonneau/helm-charts/blob/main/charts/tailscale-relay).
