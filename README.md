@@ -2,6 +2,8 @@
 
 Run Tailscale (agent/relay) in a container
 
+## Kubernetes example
+
 ```bash
 # Add the helm repository to your local client
 ~$ helm repo add mvisonneau https://charts.visonneau.fr
@@ -9,7 +11,7 @@ Run Tailscale (agent/relay) in a container
 # Install the relay
 ~$ helm install \
   tailscale-relay \
-  mvisonneau/tailscale \
+  mvisonneau/tailscale-relay \
   --set config.authKey=<your_auth_key>
 ```
 
