@@ -1,6 +1,6 @@
-# tailscale-relay-over-k8s
+# docker-tailscale
 
-Run a tailscale agent on top of K8S
+Run Tailscale (agent/relay) in a container
 
 ```bash
 # Add the helm repository to your local client
@@ -9,7 +9,7 @@ Run a tailscale agent on top of K8S
 # Install the relay
 ~$ helm install \
   tailscale-relay \
-  mvisonneau/tailscale-relay \
+  mvisonneau/tailscale \
   --set config.authKey=<your_auth_key>
 ```
 
