@@ -2,7 +2,19 @@
 
 Run Tailscale (agent/relay) in a container
 
-## Kubernetes example
+## Usage
+
+### Docker
+
+```bash
+docker run -d \
+  -e TAILSCALE_AUTH_KEY=<your_auth_key> \
+  --net host
+  --privileged
+  mvisonneau/tailscale
+```
+
+### Kubernetes
 
 ```bash
 # Add the helm repository to your local client
