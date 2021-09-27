@@ -9,8 +9,8 @@ Run Tailscale (agent/relay) in a container
 ```bash
 docker run -d \
   -e TAILSCALE_AUTH_KEY=<your_auth_key> \
-  --net host
-  --privileged
+  --net host \
+  --privileged \
   mvisonneau/tailscale
 ```
 
