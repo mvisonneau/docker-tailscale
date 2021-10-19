@@ -1,7 +1,7 @@
 FROM alpine:3.13
 
 ARG TARGETARCH
-ARG VERSION=1.14.4
+ARG VERSION=1.16.0
 
 RUN \
   apk add --no-cache iptables iproute2 ca-certificates bash \
