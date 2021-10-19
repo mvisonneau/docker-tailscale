@@ -27,4 +27,8 @@ up() {
 if [ ! -d /dev/net ]; then mkdir /dev/net; fi
 if [ ! -e /dev/net/tun ]; then mknod /dev/net/tun c 10 200; fi
 
-up & tailscaled
+up & tailscaled \
+  -socket ${TAILSCALED_SOCKET:-"/var/run/tailscale/tailscaled.sock"} \
+  -state ${TAILSCALED_STATE:-"/var/lib/tailscale/tailscaled.state"} \
+  -tun ${TAILSCALED_TUN:-"tailscale0"} \
+  -verbose ${TAILSCALED_VERBOSE:-0}
