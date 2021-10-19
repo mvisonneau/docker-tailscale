@@ -19,7 +19,7 @@ up() {
     --hostname=${TAILSCALE_HOSTNAME:-$(hostname)} \
     --login-server=${TAILSCALE_LOGIN_SERVER:-"https://login.tailscale.com"} \
     --netfilter-mode=${TAILSCALE_NETFILTER_MODE:-on} \
-    --qr=${TAILSCALE_QR:-false}
+    --qr=${TAILSCALE_QR:-false} \
     --shields-up=${TAILSCALE_SHIELDS_UP:-false} \
     --snat-subnet-routes=${TAILSCALE_SNAT_SUBNET_ROUTES:-true}
 }
